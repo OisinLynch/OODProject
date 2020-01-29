@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace OODProject
 {
 
-    public enum Genre { Action, Comedy, Drama }
+    public enum Genre { Action, Comedy, Drama, Horror }
     class Movie : IComparable
     {
         //Properties
