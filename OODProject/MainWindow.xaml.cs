@@ -21,6 +21,7 @@ namespace OODProject
     public partial class MainWindow : Window
     {
         List<Movie> movies = new List<Movie>();
+        List<Movie> selectedMovie = new List<Movie>();
         public MainWindow()
         {
             InitializeComponent();
@@ -145,6 +146,19 @@ namespace OODProject
             //Display the activities in the listbox
             lbxMoviesOptions.ItemsSource = null;
             lbxMoviesOptions.ItemsSource = movies;
+        }
+
+        //CLicking on a movie name will display the movie details
+        private void lbxMoviesOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Movie selectedMovie = lbxMoviesOptions.SelectedItem as Movie;
+            if (selectedMovie != null)
+            {
+                tblkRatingDetails.Text = selectedMovie.Rating;
+                tblkActorsDetails.Text = selectedMovie.Actors;
+                tblkDirectorDetails.Text = selectedMovie.Director;
+                tblkTimeDetails.Text = selectedMovie.Times;
+            }
         }
     }
 }
