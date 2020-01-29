@@ -23,7 +23,7 @@
         <TextBlock x:Name="tblkTimeDetails" HorizontalAlignment="Left" Margin="186,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.458,0.91"/>
         <TextBlock x:Name="tblkCart" HorizontalAlignment="Left" Margin="130,230,0,0" TextWrapping="Wrap" Text="Cart" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
         <ListBox x:Name="lbxCart" HorizontalAlignment="Left" Height="86" Margin="130,261,0,0" VerticalAlignment="Top" Width="163" Grid.Column="1"/>
-        <Button x:Name="btnBuyTickets" Content="Buy Tickets" HorizontalAlignment="Left" Margin="218,368,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <Button x:Name="btnBuyTickets" Content="Buy Tickets" HorizontalAlignment="Left" Margin="310,368,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
         <RadioButton x:Name="radioAll" Content="All" HorizontalAlignment="Left" Margin="33,179,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioAction" Content="Action" HorizontalAlignment="Left" Margin="33,217,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioComedy" Content="Comedy" HorizontalAlignment="Left" Margin="33,253,0,0" VerticalAlignment="Top"/>
@@ -31,6 +31,9 @@
         <TextBlock x:Name="tblkRating" Grid.Column="1" HorizontalAlignment="Left" Margin="130,94,0,0" TextWrapping="Wrap" Text="Rating: " VerticalAlignment="Top"/>
         <TextBlock x:Name="tblkRatingDetails" Grid.Column="1" HorizontalAlignment="Left" Margin="186,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <RadioButton x:Name="radioHorror" Content="Horror" HorizontalAlignment="Left" Margin="33,322,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAddToCart" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="36,289,0,0" VerticalAlignment="Top" Width="75" Click="btnAddToCart_Click"/>
+        <TextBlock x:Name="tblkTotal" Grid.Column="1" HorizontalAlignment="Left" Margin="130,368,0,0" TextWrapping="Wrap" Text="Total: " VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock x:Name="tblkTotalDetails" Grid.Column="1" HorizontalAlignment="Left" Margin="186,372,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

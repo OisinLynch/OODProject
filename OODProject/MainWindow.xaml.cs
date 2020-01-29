@@ -21,7 +21,9 @@ namespace OODProject
     public partial class MainWindow : Window
     {
         List<Movie> movies = new List<Movie>();
-        List<Movie> selectedMovie = new List<Movie>();
+        List<Movie> selectedMovies = new List<Movie>();
+
+        decimal totalCost = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -158,6 +160,35 @@ namespace OODProject
                 tblkActorsDetails.Text = selectedMovie.Actors;
                 tblkDirectorDetails.Text = selectedMovie.Director;
                 tblkTimeDetails.Text = selectedMovie.Times;
+            }
+        }
+
+        //Button used to add to the cart
+        private void btnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            //Find what movie is selected 
+            Movie selectedMovie = lbxMoviesOptions.SelectedItem as Movie;
+
+            //Null check
+            if (selectedMovie != null)
+            {
+                //Move activity from ActivitySelect box to SelectedActivity box
+                movies.Remove(selectedMovie);
+                selectedMovies.Add(selectedMovie);
+
+                //Update total
+                totalCost += selectedMovie.Cost;
+                tblkTotalDetails.Text = totalCost.ToString();
+
+                //Sort the seleced activities by date
+                selectedMovies.Sort();
+
+                //Refreash screen
+                lbxMoviesOptions.ItemsSource = null;
+                lbxMoviesOptions.ItemsSource = movies;
+
+                lbxCart.ItemsSource = null;
+                lbxCart.ItemsSource = selectedMovies;
             }
         }
     }
