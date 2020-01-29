@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock x:Name="tblkMoviesList" HorizontalAlignment="Left" Margin="141,90,0,0" TextWrapping="Wrap" Text="Movies" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.59,0.595"/>
+        <ListBox x:Name="lbxMoviesOptions" HorizontalAlignment="Left" Height="204" Margin="141,126,0,0" VerticalAlignment="Top" Width="144"/>
+        <TextBlock x:Name="tblkGenreFilter" HorizontalAlignment="Left" Margin="33,136,0,0" TextWrapping="Wrap" Text="Genre" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="tblkDetails" HorizontalAlignment="Left" Margin="455,57,0,0" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBlock x:Name="tblkGenre" HorizontalAlignment="Left" Margin="457,94,0,0" TextWrapping="Wrap" Text="Genre: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkGenreDetails" HorizontalAlignment="Left" Margin="511,94,0,0" TextWrapping="Wrap" Text="sdffd" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkActors" HorizontalAlignment="Left" Margin="457,128,0,0" TextWrapping="Wrap" Text="Actors: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkActorsDetails" HorizontalAlignment="Left" Margin="511,128,0,0" TextWrapping="Wrap" Text="ddfdf" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkDirector" HorizontalAlignment="Left" Margin="455,159,0,0" TextWrapping="Wrap" Text="Director: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkDirectorDetails" HorizontalAlignment="Left" Margin="511,159,0,0" TextWrapping="Wrap" Text="dgfg" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkTime" HorizontalAlignment="Left" Margin="457,191,0,0" TextWrapping="Wrap" Text="Time: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkTimeDetails" HorizontalAlignment="Left" Margin="511,191,0,0" TextWrapping="Wrap" Text="sdfsdf" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkCart" HorizontalAlignment="Left" Margin="457,238,0,0" TextWrapping="Wrap" Text="Cart" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <ListBox x:Name="lbxCart" HorizontalAlignment="Left" Height="76" Margin="455,271,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="btnBuyTickets" Content="Buy Tickets" HorizontalAlignment="Left" Margin="543,374,0,0" VerticalAlignment="Top" Width="75"/>
+        <RadioButton x:Name="radioAll" Content="All" HorizontalAlignment="Left" Margin="33,179,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioAction" Content="Action" HorizontalAlignment="Left" Margin="33,217,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioComedy" Content="Comedy" HorizontalAlignment="Left" Margin="33,253,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioDrama" Content="Drama" HorizontalAlignment="Left" Margin="33,289,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
