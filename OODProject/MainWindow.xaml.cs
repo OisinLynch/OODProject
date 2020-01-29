@@ -20,9 +20,20 @@ namespace OODProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Movie> movies = new List<Movie>();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Creating the movie objects
+            Movie m1 = new Movie()
+            {
+                Name = "Treking",
+                
+            };
         }
     }
 }
