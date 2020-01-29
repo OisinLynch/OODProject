@@ -190,6 +190,12 @@ namespace OODProject
                 lbxCart.ItemsSource = null;
                 lbxCart.ItemsSource = selectedMovies;
             }
+
+            //Message box to alert user that no movie has been slected to add to the cart
+            else if (selectedMovie == null)
+            {
+                MessageBox.Show("No movie has been selected to add to the cart");
+            }
         }
     }
 }
