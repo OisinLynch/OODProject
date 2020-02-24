@@ -22,6 +22,7 @@ namespace OODProject
     {
         List<Movie> movies = new List<Movie>();
         List<Movie> selectedMovies = new List<Movie>();
+        List<Movie> filteredMovies = new List<Movie>();
 
         decimal totalCost = 0;
         public MainWindow()
@@ -66,17 +67,6 @@ namespace OODProject
             };
 
             Movie m4 = new Movie()
-            {
-                Name = "The Grudge",
-                Cost = 8m,
-                Actors = "Betty Gilpin, Andrea Riseborough, William Sadler",
-                Director = "Nicolas Pesce",
-                Times = "17:15, 20:30",
-                Rating = "18",
-                TypeOfGenre = Genre.Horror
-            };
-
-            Movie m5 = new Movie()
             {
                 Name = "The Grudge",
                 Cost = 8m,
@@ -136,7 +126,6 @@ namespace OODProject
             movies.Add(m2);
             movies.Add(m3);
             movies.Add(m4);
-            movies.Add(m5);
             movies.Add(m6);
             movies.Add(m7);
             movies.Add(m8);
@@ -172,7 +161,7 @@ namespace OODProject
             //Null check
             if (selectedMovie != null)
             {
-                //Move activity from ActivitySelect box to SelectedActivity box
+                //Move activity from MovieOptions box to Cart box
                 movies.Remove(selectedMovie);
                 selectedMovies.Add(selectedMovie);
 
@@ -180,7 +169,7 @@ namespace OODProject
                 totalCost += selectedMovie.Cost;
                 tblkTotalDetails.Text = totalCost.ToString();
 
-                //Sort the seleced activities by date
+                //Sort the seleced movies by name
                 selectedMovies.Sort();
 
                 //Refreash screen
@@ -196,6 +185,110 @@ namespace OODProject
             {
                 MessageBox.Show("No movie has been selected to add to the cart");
             }
+        }//End of add to cart button click
+
+        //Button to remove from cart
+        private void BtnRemoveFromCart_Click(object sender, RoutedEventArgs e)
+        {
+            //Find what movie is selected 
+            Movie selectedMovie = lbxCart.SelectedItem as Movie;
+
+
+            //Null check
+            if (selectedMovie != null)
+            {
+                //Move movie from MovieOptions box to Cart box
+                movies.Add(selectedMovie);
+                selectedMovies.Remove(selectedMovie);
+
+                //Update total
+                totalCost -= selectedMovie.Cost;
+                tblkTotalDetails.Text = totalCost.ToString();
+                
+                //Sort the seleced movies by name
+                movies.Sort();
+
+                //Refreash screen
+                lbxMoviesOptions.ItemsSource = null;
+                lbxMoviesOptions.ItemsSource = movies;
+
+                lbxCart.ItemsSource = null;
+                lbxCart.ItemsSource = selectedMovies;
+            }
+
+            //Message box to alert user that no movie has been selected to remove
+            else if (selectedMovie == null)
+            {
+                MessageBox.Show("No movie has been selected to remove");
+            }
+        }
+
+        //All radio buttons
+        private void RadioAll_Click_1(object sender, RoutedEventArgs e)
+        {
+            filteredMovies.Clear();
+
+            if (radioAll.IsChecked == true)
+            {
+                //Show all movies
+                lbxMoviesOptions.ItemsSource = null;
+                lbxMoviesOptions.ItemsSource = movies;
+
+                lbxCart.ItemsSource = null;
+                lbxCart.ItemsSource = selectedMovies;
+            }
+            else if (radioAction.IsChecked == true)
+            {
+                //Show only land activities
+                foreach (Movie movie in movies)
+                {
+                    if (movie.TypeOfGenre == Genre.Action)
+                    {
+                        filteredMovies.Add(movie);
+                        lbxMoviesOptions.ItemsSource = null;
+                        lbxMoviesOptions.ItemsSource = filteredMovies;
+                    }
+                }
+            }
+            else if (radioComedy.IsChecked == true)
+            {
+                //Show only water activities
+                foreach (Movie movie in movies)
+                {
+                    if (movie.TypeOfGenre == Genre.Comedy)
+                    {
+                        filteredMovies.Add(movie);
+                        lbxMoviesOptions.ItemsSource = null;
+                        lbxCart.ItemsSource = filteredMovies;
+                    }
+                }
+            }
+            else if (radioDrama.IsChecked == true)
+            {
+                //Show only air activities
+                foreach (Movie movie in movies)
+                {
+                    if (movie.TypeOfGenre == Genre.Drama)
+                    {
+                        filteredMovies.Add(movie);
+                        lbxMoviesOptions.ItemsSource = null;
+                        lbxMoviesOptions.ItemsSource = filteredMovies;
+                    }
+                }
+            }
+            else if (radioHorror.IsChecked == true)
+            {
+                //Show only air activities
+                foreach (Movie movie in movies)
+                {
+                    if (movie.TypeOfGenre == Genre.Horror)
+                    {
+                        filteredMovies.Add(movie);
+                        lbxMoviesOptions.ItemsSource = null;
+                        lbxMoviesOptions.ItemsSource = filteredMovies;
+                    }
+                }
+            }// end of raio buttton
         }
     }
 }
