@@ -18,6 +18,7 @@ namespace OODProject
         public string Times { get; set; }
         public string Rating { get; set; }
         public Genre TypeOfGenre { get; internal set; }
+        public string ImageName { get; set; }
 
         //Constructors
         public Movie()

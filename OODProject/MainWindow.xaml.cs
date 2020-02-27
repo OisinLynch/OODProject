@@ -41,7 +41,9 @@ namespace OODProject
                 Director = "Sam Mendes",
                 Times = "17:30, 20:30",
                 Rating = "15A",
-                TypeOfGenre = Genre.Drama
+                TypeOfGenre = Genre.Drama,
+                ImageName = "1917.jpg"
+                
             };
 
             Movie m2 = new Movie()
@@ -52,7 +54,8 @@ namespace OODProject
                 Director = "Bilall Fallah, Adil El Arbi",
                 Times = "18:00, 20:45",
                 Rating = "16",
-                TypeOfGenre = Genre.Action
+                TypeOfGenre = Genre.Action,
+                ImageName = "badboys.jpg"
             };
 
             Movie m3 = new Movie()
@@ -63,7 +66,8 @@ namespace OODProject
                 Director = "Floria Sigismondi",
                 Times = "18:30, 21:00",
                 Rating = "16",
-                TypeOfGenre = Genre.Horror
+                TypeOfGenre = Genre.Horror,
+                ImageName = "theturning.jpg"
             };
 
             Movie m4 = new Movie()
@@ -74,7 +78,8 @@ namespace OODProject
                 Director = "Nicolas Pesce",
                 Times = "17:15, 20:30",
                 Rating = "18",
-                TypeOfGenre = Genre.Horror
+                TypeOfGenre = Genre.Horror,
+                ImageName = "grudge.jpg"
             };
 
             Movie m6 = new Movie()
@@ -85,7 +90,8 @@ namespace OODProject
                 Director = "Destin Daniel Cretton",
                 Times = "20:15",
                 Rating = "12A",
-                TypeOfGenre = Genre.Drama
+                TypeOfGenre = Genre.Drama,
+                ImageName = "justmercy.jpg"
             };
 
             Movie m7 = new Movie()
@@ -96,7 +102,8 @@ namespace OODProject
                 Director = "Stephen Gaghan",
                 Times = "17:45, 20:15",
                 Rating = "PG",
-                TypeOfGenre = Genre.Comedy
+                TypeOfGenre = Genre.Comedy,
+                ImageName = "doolittle.jpg"
             };
 
             Movie m8 = new Movie()
@@ -107,7 +114,8 @@ namespace OODProject
                 Director = "Jake Kasdan",
                 Times = "17:15",
                 Rating = "12A",
-                TypeOfGenre = Genre.Comedy
+                TypeOfGenre = Genre.Comedy,
+                ImageName = "jumanji.jpg"
             };
 
             Movie m9 = new Movie()
@@ -118,7 +126,8 @@ namespace OODProject
                 Director = "J.J. Abrams",
                 Times = "17:00",
                 Rating = "12A",
-                TypeOfGenre = Genre.Action
+                TypeOfGenre = Genre.Action,
+                ImageName = "starwars.jpg"
             };
 
             //Adding movies to the list
@@ -149,6 +158,10 @@ namespace OODProject
                 tblkActorsDetails.Text = selectedMovie.Actors;
                 tblkDirectorDetails.Text = selectedMovie.Director;
                 tblkTimeDetails.Text = selectedMovie.Times;
+
+                string imagePath = $"\\images\\{selectedMovie.ImageName}";
+
+                imgDetails.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
             }
         }
 
@@ -239,7 +252,7 @@ namespace OODProject
             }
             else if (radioAction.IsChecked == true)
             {
-                //Show only land activities
+                //Show only Action movies
                 foreach (Movie movie in movies)
                 {
                     if (movie.TypeOfGenre == Genre.Action)
@@ -252,20 +265,20 @@ namespace OODProject
             }
             else if (radioComedy.IsChecked == true)
             {
-                //Show only water activities
+                //Show only Comedy movies
                 foreach (Movie movie in movies)
                 {
                     if (movie.TypeOfGenre == Genre.Comedy)
                     {
                         filteredMovies.Add(movie);
                         lbxMoviesOptions.ItemsSource = null;
-                        lbxCart.ItemsSource = filteredMovies;
+                        lbxMoviesOptions.ItemsSource = filteredMovies;
                     }
                 }
             }
             else if (radioDrama.IsChecked == true)
             {
-                //Show only air activities
+                //Show only Drama movies
                 foreach (Movie movie in movies)
                 {
                     if (movie.TypeOfGenre == Genre.Drama)
@@ -278,7 +291,7 @@ namespace OODProject
             }
             else if (radioHorror.IsChecked == true)
             {
-                //Show only air activities
+                //Show only Horror movies
                 foreach (Movie movie in movies)
                 {
                     if (movie.TypeOfGenre == Genre.Horror)

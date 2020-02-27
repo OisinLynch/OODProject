@@ -95,5 +95,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\badboys.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\1917.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\grudge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\theturning.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\justmercy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\jumanji.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\starwars.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\doolittle.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
